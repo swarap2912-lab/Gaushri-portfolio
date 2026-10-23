@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#071c1d">
+	<meta name="description" content="Gaushri Cow Welfare Foundation — rescuing, protecting, and caring for cows with compassion.">
+	<title>Gaushri — Cow Welfare Foundation</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+	<link rel="icon" href="images/gaushri-emblem.png">
+    <link rel="stylesheet" href="css/style.css">
+
+	<style>
+		:root {
+			color-scheme: dark;
+			--night: #071c1d;
+			--night-soft: #0b2828;
+			--deep: #0d3432;
+			--gold: #d4b16a;
+			--gold-light: #f0d99b;
+			--ivory: #f6f0e2;
+			--muted: #aab7a9;
+			--line: rgba(212, 177, 106, .24);
+			--serif: 'Cormorant Garamond', Georgia, serif;
+			--sans: 'DM Sans', sans-serif;
+		}
+		* { box-sizing: border-box; }
+		html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 88px; }
+		body { overflow-x: clip; margin: 0; background: var(--night); color: var(--ivory); font-family: var(--sans); }
+		body::before { position: fixed; z-index: -1; inset: 0; background: radial-gradient(ellipse at 50% 12%, rgba(21, 85, 75, .25), transparent 44%), radial-gradient(ellipse at 90% 72%, rgba(15, 75, 67, .12), transparent 35%); content: ''; pointer-events: none; }
+		a { color: inherit; }
+		img { display: block; max-width: 100%; }
+		::selection { background: var(--gold); color: var(--night); }
+		.wrap { width: min(1180px, calc(100% - 52px)); margin-inline: auto; }
+		.serif { font-family: var(--serif); }
+		.eyebrow { margin: 0; color: var(--gold); font-size: .67rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+		.site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(212,177,106,.12); background: rgba(7,28,29,.88); backdrop-filter: blur(16px); }
+		.nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; }
+		.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+		.brand-mark { display: grid; width: 39px; height: 39px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold-light); font-family: var(--serif); font-size: 1.55rem; }
+		.brand-name { color: var(--ivory); font-family: var(--serif); font-size: 1.18rem; font-weight: 600; letter-spacing: .11em; }
+		.brand-name small { display: block; margin-top: -3px; color: var(--gold); font-family: var(--sans); font-size: .46rem; font-weight: 500; letter-spacing: .18em; }
+		.nav-links { display: flex; align-items: center; gap: 31px; }
+		.nav-links a { color: #d3d9cb; font-size: .77rem; letter-spacing: .04em; text-decoration: none; transition: color .2s; }
+		.nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-light); }
+		.nav-cta, .button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--gold); border-radius: 3px; padding: 0 18px; color: var(--gold-light) !important; font-size: .72rem !important; font-weight: 600; letter-spacing: .09em !important; text-decoration: none; text-transform: uppercase; transition: background .2s, color .2s, transform .2s; }
+		.nav-cta:hover, .button:hover { transform: translateY(-2px); background: var(--gold); color: var(--night) !important; }
+		.menu-toggle { display: none; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ivory); }
+		.hero { position: relative; overflow: hidden; padding: 48px 0 86px; }
+		.hero::before { position: absolute; top: -230px; left: 50%; width: min(900px, 120vw); aspect-ratio: 1; border: 1px solid rgba(212,177,106,.06); border-radius: 50%; content: ''; transform: translateX(-50%); pointer-events: none; }
+		.hero::after { position: absolute; top: -135px; left: 50%; width: min(710px, 95vw); aspect-ratio: 1; border: 1px solid rgba(212,177,106,.055); border-radius: 50%; content: ''; transform: translateX(-50%); pointer-events: none; }
+		.hero-kicker { display: flex; align-items: center; justify-content: center; gap: 13px; }
+		.hero-kicker::before, .hero-kicker::after { width: 37px; height: 1px; background: var(--gold); content: ''; opacity: .65; }
+		.hero-heading { position: relative; z-index: 1; }
+		.hero-emblem { position: relative; z-index: 1; display: block; width: min(720px, 100%); height: auto; margin: 18px auto 0; filter: drop-shadow(0 22px 45px rgba(0,0,0,.28)); }
+		.hero-actions { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 19px; margin-top: 16px; text-align: center; }
+		.hero-description { max-width: 530px; margin: 0; color: #c5cbbd; font-family: var(--serif); font-size: 1.19rem; line-height: 1.65; }
+		.hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+		.section { padding: 103px 0; border-top: 1px solid rgba(212,177,106,.12); }
+		.section-heading { max-width: 690px; margin: 0 auto 51px; text-align: center; }
+		.section-heading h2 { margin: 13px 0 12px; color: var(--ivory); font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; line-height: .98; }
+		.section-heading p:last-child { max-width: 555px; margin: 0 auto; color: var(--muted); font-size: .91rem; line-height: 1.8; }
+		.story-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 9%; }
+		.story-image-wrap { position: relative; min-height: 390px; }
+		.story-image { width: 100%; height: 390px; border-radius: 2px; object-fit: cover; filter: saturate(.75); }
+		.story-image-wrap::after { position: absolute; inset: 14px -14px -14px 14px; z-index: -1; border: 1px solid var(--line); content: ''; }
+		.image-caption { position: absolute; right: -14px; bottom: 16px; padding: 12px 16px; background: var(--deep); color: var(--gold-light); font-family: var(--serif); font-size: 1.1rem; font-style: italic; }
+		.story-copy h2 { margin: 14px 0 19px; font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.1rem); font-weight: 500; line-height: .98; }
+		.story-copy > p:not(.eyebrow) { color: var(--muted); font-size: .9rem; line-height: 1.9; }
+		.story-points { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; margin-top: 28px; }
+		.story-point { display: flex; align-items: center; gap: 10px; color: #e3ddcb; font-size: .74rem; }
+		.story-point span { color: var(--gold); font-size: 1.1rem; }
+		.care-section { background: linear-gradient(180deg, rgba(12,47,45,.64), rgba(8,31,31,.32)); }
+		.care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+		.care-card { min-height: 250px; border: 1px solid rgba(212,177,106,.17); background: rgba(10,37,36,.62); padding: 29px 26px; transition: border-color .25s, transform .25s, background .25s; }
+		.care-card:hover { transform: translateY(-5px); border-color: rgba(212,177,106,.65); background: rgba(14,54,49,.75); }
+		.care-number { color: rgba(212,177,106,.62); font-family: var(--serif); font-size: 1rem; }
+		.care-icon { display: grid; width: 43px; height: 43px; place-items: center; margin-top: 20px; border: 1px solid var(--line); border-radius: 50%; color: var(--gold-light); }
+		.care-icon svg { width: 20px; height: 20px; }
+		.care-card h3 { margin: 17px 0 9px; color: var(--ivory); font-family: var(--serif); font-size: 1.65rem; font-weight: 500; }
+		.care-card p { margin: 0; color: var(--muted); font-size: .77rem; line-height: 1.75; }
+		.pledge { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 8%; padding: 47px 50px; border: 1px solid rgba(212,177,106,.28); background: radial-gradient(ellipse at 0% 100%, rgba(22,76,65,.47), transparent 57%), #0a2524; }
+		.pledge h2 { margin: 12px 0; font-family: var(--serif); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 500; line-height: .97; }
+		.pledge p:not(.eyebrow) { max-width: 490px; margin-bottom: 0; color: var(--muted); font-size: .85rem; line-height: 1.8; }
+		.pledge-action { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; }
+		.pledge-action p { margin: 0; color: #84988b; font-size: .68rem; line-height: 1.7; }
+		.contact-section { padding: 87px 0 91px; text-align: center; }
+		.contact-section h2 { margin: 13px 0; font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; line-height: .95; }
+		.contact-section > .wrap > p:not(.eyebrow) { max-width: 500px; margin: 0 auto 25px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
+		.contact-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 13px; }
+		.button.primary { background: var(--gold); color: var(--night) !important; }
+		.button.primary:hover { background: var(--gold-light); }
+		.footer { border-top: 1px solid rgba(212,177,106,.15); padding: 23px 0; }
+		.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; }
+		.footer p { margin: 0; color: #87968b; font-size: .65rem; }
+		.footer-tagline { color: #b4aa93 !important; font-size: .57rem !important; letter-spacing: .13em; }
+		.back-top { color: var(--gold-light); font-size: .67rem; text-decoration: none; }
+		@media (max-width: 760px) {
+			.wrap { width: min(calc(100% - 36px), 590px); }
+			.nav { min-height: 68px; }
+			.menu-toggle { display: grid; }
+			.nav-links { position: absolute; top: 68px; right: 18px; left: 18px; display: none; align-items: stretch; gap: 0; border: 1px solid var(--line); background: #0a2222; padding: 8px 18px; }
+			.nav-links.is-open { display: flex; flex-direction: column; }
+			.nav-links a { padding: 14px 2px; }
+			.nav-links a + a { border-top: 1px solid rgba(212,177,106,.12); }
+			.nav-cta { margin: 8px 0; }
+			.hero { padding-top: 39px; padding-bottom: 66px; }
+			.hero-emblem { width: min(580px, 100%); }
+			.section { padding: 76px 0; }
+			.story-grid { grid-template-columns: 1fr; gap: 47px; }
+			.story-image-wrap { min-height: 310px; margin-right: 12px; }
+			.story-image { height: 310px; }
+			.care-grid { grid-template-columns: 1fr; gap: 12px; }
+			.care-card { min-height: 0; }
+			.pledge { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+		}
+		@media (max-width: 420px) {
+			.hero { padding-top: 32px; }
+			.hero-description { font-size: 1.08rem; }
+			.hero-buttons { width: 100%; }
+			.hero-buttons .button { width: 100%; }
+			.story-points { grid-template-columns: 1fr; }
+			.footer-tagline { display: none; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<nav class="nav wrap" aria-label="Main navigation">
+			<a class="brand" href="#home" aria-label="Gaushri Foundation home">
+				<span class="brand-mark" aria-hidden="true">G</span>
+				<span class="brand-name">GAUSHRI<small>COW WELFARE FOUNDATION</small></span>
+			</a>
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+				<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+			</button>
+			<div class="nav-links" id="nav-links">
+				<a href="#about">Our purpose</a><a href="#care">What we do</a><a href="#support">Get involved</a>
+				<a class="nav-cta" href="#contact">Support our work <span aria-hidden="true">↗</span></a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section id="home" class="hero">
+			<div class="wrap">
+				<div class="hero-heading" data-aos="fade-up" data-aos-duration="850">
+					<p class="eyebrow hero-kicker">A promise of care · A tradition of compassion</p>
+				</div>
+				<img class="hero-emblem" src="images/gaushri-emblem.png" alt="Gaushri Cow Welfare Foundation emblem: an ornate gold crown, ivory cow, and G monogram above five commitments—Rescue, Care, Shelter, Sustain, Compassion—and the tagline Compassion, Protection, Legacy." fetchpriority="high" data-aos="zoom-in" data-aos-delay="140" data-aos-duration="1000">
+				<div class="hero-actions" data-aos="fade-up" data-aos-delay="220">
+					<p class="hero-description">Where every life is met with kindness. Together, we can give every cow a safer, more dignified future.</p>
+					<div class="hero-buttons">
+						<a class="button primary" href="tel:+919081002952">Call +91 9081002952 <span aria-hidden="true">↗</span></a>
+						<a class="button" href="#about">Discover our purpose <span aria-hidden="true">↓</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="wrap story-grid">
+				<div class="story-image-wrap" data-aos="fade-right">
+					<img class="story-image" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Cows resting in a peaceful green pasture" loading="lazy">
+					<span class="image-caption">A gentler way forward</span>
+				</div>
+				<div class="story-copy" data-aos="fade-left">
+					<p class="eyebrow">Rooted in reverence · Guided by care</p>
+					<h2>Every cow deserves<br>a place to belong.</h2>
+					<p>Gaushri Cow Welfare Foundation is devoted to a simple belief: every cow deserves safety, nourishment, and a life treated with dignity. We bring rescue, shelter, and everyday care together under one compassionate promise.</p>
+					<p>From urgent support for a cow in need to a peaceful, lasting home, we stand for thoughtful care that honors every life.</p>
+					<div class="story-points">
+						<div class="story-point"><span aria-hidden="true">✧</span> Gentle, attentive care</div>
+						<div class="story-point"><span aria-hidden="true">✧</span> Safe and loving shelter</div>
+						<div class="story-point"><span aria-hidden="true">✧</span> Health and nourishment</div>
+						<div class="story-point"><span aria-hidden="true">✧</span> A promise for every life</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section care-section" id="care">
+			<div class="wrap">
+				<div class="section-heading" data-aos="fade-up">
+					<p class="eyebrow">Compassion in action</p>
+					<h2>Care in every chapter.</h2>
+					<p>From the first call for help to a safe place to rest, our promise is to show up with kindness, skill, and care that lasts.</p>
+				</div>
+				<div class="care-grid">
+					<article class="care-card" data-aos="fade-up" data-aos-delay="0">
+						<span class="care-number">01 / A safe arrival</span>
+						<span class="care-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 16.5v-4l2.1-3.2 4.1-1.2 3.7 1.2 2.2 3.2h3v4h-2.1a2 2 0 0 1-3.9 0H9.8a2 2 0 0 1-3.9 0H4Z"/><path d="m6.1 9.3-.4-2 2-.8 2.1 1.7m5.3-.7 2.1-1.3 1.4 1.1-1.5 2.1"/></svg></span>
+						<h3>Rescue &amp; relief</h3>
+						<p>A compassionate response for cows facing injury, neglect, or uncertainty—and a careful journey toward safety.</p>
+					</article>
+					<article class="care-card" data-aos="fade-up" data-aos-delay="100">
+						<span class="care-number">02 / Thoughtful care</span>
+						<span class="care-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" aria-hidden="true"><path d="M10 3h4v6h6v4h-6v6h-4v-6H4V9h6z"/><path d="M18.5 18c-1-2.2.1-4.2 2.4-4.8.3 2.5-.5 4.3-2.4 4.8Z"/></svg></span>
+						<h3>Health &amp; healing</h3>
+						<p>Gentle attention, nourishing food, and access to veterinary support help each cow feel safe, seen, and cared for.</p>
+					</article>
+					<article class="care-card" data-aos="fade-up" data-aos-delay="200">
+						<span class="care-number">03 / A place to belong</span>
+						<span class="care-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 11.2 12 4l9 7.2M5.5 10v9h13v-9M3.5 20h17"/><path d="M9 19v-4.3a3 3 0 0 1 6 0V19"/></svg></span>
+						<h3>Safe shelter</h3>
+						<p>A peaceful space to rest, roam, and live with dignity, supported by patient hands and a caring community.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="support">
+			<div class="wrap">
+				<div class="pledge" data-aos="fade-up">
+					<div>
+						<p class="eyebrow">A kinder world begins together</p>
+						<h2>Your kindness can<br>make room for hope.</h2>
+						<p>Every helping hand brings us closer to a safer, kinder future for cows. Join our circle of care and help compassion grow.</p>
+					</div>
+					<div class="pledge-action">
+						<a class="button" href="#contact">Be part of their story <span aria-hidden="true">↗</span></a>
+						<p>Reach out to learn about supporting rescue, shelter, and everyday welfare.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact-section" id="contact">
+			<div class="wrap" data-aos="fade-up">
+				<p class="eyebrow">The beginning of something good</p>
+				<h2>Let kindness<br>find its way.</h2>
+				<p>Have a cow in need, want to volunteer, or simply wish to learn more? We’d love to hear from you.</p>
+				<div class="contact-actions">
+					<a class="button primary" href="tel:+919081002952">Call +91 9081002952 <span aria-hidden="true">↗</span></a>
+					<a class="button" href="#support">Support our work <span aria-hidden="true">↑</span></a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="wrap footer-inner">
+			<a class="brand" href="#home" aria-label="Gaushri Foundation home"><span class="brand-mark" aria-hidden="true">G</span><span class="brand-name">GAUSHRI<small>COW WELFARE FOUNDATION</small></span></a>
+			<p class="footer-tagline">COMPASSION · PROTECTION · LEGACY</p>
+			<p>© <span id="year"></span> Gaushri Cow Welfare Foundation</p>
+			<a class="back-top" href="#home">Back to top ↑</a>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+		if (window.AOS) {
+			AOS.init({ duration: 700, once: true, offset: 65, easing: 'ease-out-cubic', disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches });
+		}
+		const menuButton = document.querySelector('.menu-toggle');
+		const navigation = document.querySelector('#nav-links');
+		menuButton.addEventListener('click', () => {
+			const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+			menuButton.setAttribute('aria-expanded', String(!isOpen));
+			menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+			navigation.classList.toggle('is-open', !isOpen);
+		});
+		navigation.addEventListener('click', (event) => {
+			if (event.target.closest('a')) {
+				menuButton.setAttribute('aria-expanded', 'false');
+				menuButton.setAttribute('aria-label', 'Open navigation');
+				navigation.classList.remove('is-open');
+			}
+		});
+		document.querySelector('#year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
